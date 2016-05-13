@@ -1,0 +1,8 @@
+# Ignore backup files
+*~
+
+# Ignore elpa installation directory.
+elpa/*
+
+# Ignore recent
+recentf
