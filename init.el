@@ -28,17 +28,15 @@
 (use-package cc-mode
   :defer t
   :config
-  (progn
-    (use-package google-c-style
-      :ensure t
-      :init
-      (progn
-	(add-hook 'c-mode-common-hook
-		  (lambda ()
-		    (google-set-c-style)
-		    (google-make-newline-indent))))
-      :config
-      (c-set-offset 'statement-case-open 0))))
+  (use-package google-c-style
+    :ensure t
+    :init
+    (add-hook 'c-mode-common-hook
+	      (lambda ()
+		(google-set-c-style)
+		(google-make-newline-indent)))
+    :config
+    (c-set-offset 'statement-case-open 0)))
 
 (use-package color-theme-sanityinc-solarized
   :ensure t
