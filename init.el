@@ -86,4 +86,9 @@
   :ensure t
   :defer 5)
 
+(use-package org
+  :ensure t
+  :config
+  (use-package ox-reveal :ensure t))
+
 ;;; init.el ends here
