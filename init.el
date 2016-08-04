@@ -78,6 +78,10 @@
     :init (helm-mode 1))
   (global-unset-key (kbd "C-x c")))
 
+(use-package ledger-mode
+  :ensure t
+  :mode ".ldg")
+
 (use-package magit
   :ensure t
   :defer 5)
