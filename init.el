@@ -28,17 +28,15 @@
 (use-package cc-mode
   :defer t
   :config
-  (progn
-    (use-package google-c-style
-      :ensure t
-      :init
-      (progn
-	(add-hook 'c-mode-common-hook
-		  (lambda ()
-		    (google-set-c-style)
-		    (google-make-newline-indent))))
-      :config
-      (c-set-offset 'statement-case-open 0))))
+  (use-package google-c-style
+    :ensure t
+    :init
+    (add-hook 'c-mode-common-hook
+	      (lambda ()
+		(google-set-c-style)
+		(google-make-newline-indent)))
+    :config
+    (c-set-offset 'statement-case-open 0)))
 
 (use-package color-theme-sanityinc-solarized
   :ensure t
@@ -51,9 +49,17 @@
     (load-theme 'sanityinc-solarized-light t)))
 
 (use-package company
- :ensure t
- :defer 5
- :config (global-company-mode 1))
+  :ensure t
+  :defer 5
+  :config (global-company-mode 1))
+
+(use-package langtool
+  :ensure t
+  :bind
+  (("C-x 4 w" . langtool-check)
+   ("C-x 4 W" . langtool-check-done)
+   ("C-x 4 4" . langtool-show-message-at-point)
+   ("C-x 4 c" . langtool-correct-buffer)))
 
 (use-package flycheck
   :ensure t
@@ -67,11 +73,10 @@
          ("C-x C-f" . helm-find-files)
          ("C-x b" . helm-mini))
   :config
-  (progn
-    (use-package helm-mode
-      :diminish helm-mode
-      :init (helm-mode 1))
-    (global-unset-key (kbd "C-x c"))))
+  (use-package helm-mode
+    :diminish helm-mode
+    :init (helm-mode 1))
+  (global-unset-key (kbd "C-x c")))
 
 (use-package magit
   :ensure t
