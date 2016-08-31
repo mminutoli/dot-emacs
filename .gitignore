@@ -6,3 +6,7 @@ elpa/*
 
 # Ignore recent
 recentf
+/tramp
+/bookmarks
+/eshell/history
+/eshell/lastdir
