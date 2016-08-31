@@ -53,6 +53,10 @@
   :defer 5
   :config (global-company-mode 1))
 
+(use-package dockerfile-mode
+  :ensure t
+  :mode "^Dokerfile.*")
+
 (use-package langtool
   :ensure t
   :bind
