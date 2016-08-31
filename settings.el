@@ -5,17 +5,22 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
+ '(column-number-mode t)
  '(company-clang-executable nil)
  '(custom-file "~/.emacs.d/settings.el")
  '(flycheck-clang-language-standard "c++11")
+ '(flycheck-clang-pedantic t)
+ '(flycheck-clang-pedantic-errors t)
+ '(global-flycheck-mode t)
  '(inhibit-startup-screen t)
  '(langtool-default-language "en-US")
  '(langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar")
  '(menu-bar-mode nil)
+ '(org-default-notes-file "~/org/refile.org")
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (dockerfile-mode langtool org-mode ox-reveal ledger-mode magit google-c-style helm flycheck company color-theme-sanityinc-solarized use-package)))
+    (dockerfile-mode langtool org-mode ox-reveal yasnippet markdown-mode ledger-mode magit google-c-style helm flycheck company color-theme-sanityinc-solarized use-package)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces

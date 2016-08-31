@@ -99,9 +99,18 @@
   :ensure t
   :defer 5)
 
+(use-package markdown-mode
+  :ensure t
+  :mode ".md")
+
 (use-package org
   :ensure t
+  :bind
+  (("C-c c" . org-capture))
   :config
   (use-package ox-reveal :ensure t))
+
+(use-package yasnippet
+  :ensure t)
 
 ;;; init.el ends here
