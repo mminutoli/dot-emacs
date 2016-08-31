@@ -25,6 +25,14 @@
 ;; Load customization settings.
 (load (expand-file-name "settings" user-emacs-directory))
 
+;; Select theme
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+	      (lambda (frame)
+		(select-frame frame)
+		(load-theme 'tango-dark t)))
+  (load-theme 'tango-dark t))
+
 (use-package cc-mode
   :defer t
   :config
@@ -39,6 +47,7 @@
     (c-set-offset 'statement-case-open 0)))
 
 (use-package color-theme-sanityinc-solarized
+  :disabled t
   :ensure t
   :config
   (if (daemonp)

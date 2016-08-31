@@ -15,7 +15,7 @@
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (langtool org-mode ox-reveal ledger-mode magit google-c-style helm flycheck company color-theme-sanityinc-solarized use-package)))
+    (dockerfile-mode langtool org-mode ox-reveal ledger-mode magit google-c-style helm flycheck company color-theme-sanityinc-solarized use-package)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces
