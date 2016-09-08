@@ -46,6 +46,10 @@
     :config
     (c-set-offset 'statement-case-open 0)))
 
+(use-package cmake-mode
+  :ensure t
+  :mode "CMakeLists.txt|.cmake")
+
 (use-package color-theme-sanityinc-solarized
   :disabled t
   :ensure t
