@@ -66,6 +66,9 @@
   :ensure t
   :mode "^Dokerfile.*")
 
+(use-package ibuffer-mode
+  :bind ("C-x C-b" . ibuffer))
+
 (use-package langtool
   :ensure t
   :bind
