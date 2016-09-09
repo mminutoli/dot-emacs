@@ -12,10 +12,12 @@
  '(flycheck-clang-pedantic t)
  '(flycheck-clang-pedantic-errors t)
  '(global-flycheck-mode t)
+ '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(langtool-default-language "en-US")
  '(langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar")
  '(menu-bar-mode nil)
+ '(org-babel-load-languages (quote ((shell . t) (emacs-lisp . t))))
  '(org-default-notes-file "~/org/refile.org")
  '(package-enable-at-startup nil)
  '(package-selected-packages
