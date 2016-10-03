@@ -8,6 +8,7 @@
  '(column-number-mode t)
  '(company-clang-executable nil)
  '(custom-file "~/.emacs.d/settings.el")
+ '(fill-column 80)
  '(flycheck-clang-language-standard "c++11")
  '(flycheck-clang-pedantic t)
  '(flycheck-clang-pedantic-errors t)

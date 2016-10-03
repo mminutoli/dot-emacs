@@ -33,6 +33,9 @@
 		(load-theme 'tango-dark t)))
   (load-theme 'tango-dark t))
 
+;; Re-enable disabled commands
+(put 'narrow-to-region 'disabled nil)
+
 (use-package cc-mode
   :defer t
   :config
@@ -108,14 +111,17 @@
 
 (use-package markdown-mode
   :ensure t
-  :mode ".md")
+  :mode ".md"
+  :config
+  (auto-fill-mode))
 
 (use-package org
   :ensure t
   :bind
   (("C-c c" . org-capture))
   :config
-  (use-package ox-reveal :ensure t))
+  (use-package ox-reveal :ensure t)
+  (auto-fill-mode))
 
 (use-package yasnippet
   :ensure t)
