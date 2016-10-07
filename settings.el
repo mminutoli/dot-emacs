@@ -25,12 +25,38 @@
  '(org-directory "~/org/")
  '(org-outline-path-complete-in-steps nil)
  '(org-refile-targets (quote ((org-agenda-files :maxlevel . 4))))
+ '(org-babel-load-languages
+   (quote
+    ((shell . t)
+     (emacs-lisp . t)
+     (awk . t)
+     (dot . t)
+     (python . t)
+     (ledger . t))))
+ '(org-latex-default-packages-alist
+   (quote
+    (("AUTO" "inputenc" t)
+     ("T1" "fontenc" t)
+     ("" "fixltx2e" nil)
+     ("" "graphicx" t)
+     ("" "grffile" t)
+     ("" "longtable" nil)
+     ("" "wrapfig" nil)
+     ("" "rotating" nil)
+     ("normalem" "ulem" t)
+     ("" "amsmath" t)
+     ("" "textcomp" t)
+     ("" "amssymb" t)
+     ("" "capt-of" nil)
+     ("" "hyperref" nil)
+     ("" "tabu" nil))))
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
     (cmake-mode dockerfile-mode langtool org-mode ox-reveal yasnippet markdown-mode ledger-mode magit google-c-style helm flycheck company color-theme-sanityinc-solarized use-package)))
  '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(tramp-default-method "ssh"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
