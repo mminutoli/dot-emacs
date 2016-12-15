@@ -36,6 +36,11 @@
 ;; Re-enable disabled commands
 (put 'narrow-to-region 'disabled nil)
 
+(use-package tex
+  :ensure auctex
+  :config
+  (auto-fill-mode))
+
 (use-package cc-mode
   :defer t
   :config
