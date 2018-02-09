@@ -15,6 +15,7 @@
  '(flycheck-clang-language-standard "c++11")
  '(flycheck-clang-pedantic t)
  '(flycheck-clang-pedantic-errors t)
+ '(flycheck-global-modes nil)
  '(global-flycheck-mode t)
  '(helm-org-format-outline-path t)
  '(indent-tabs-mode nil)
@@ -40,6 +41,7 @@
       "* %i%?\\n %U"))))
  '(org-default-notes-file "~/org/refile.org")
  '(org-directory "~/org/")
+ '(org-export-backends (quote (ascii beamer html icalendar latex)))
  '(org-latex-default-packages-alist
    (quote
     (("AUTO" "inputenc" t)
@@ -56,17 +58,20 @@
      ("" "amssymb" t)
      ("" "capt-of" nil)
      ("" "hyperref" nil)
-     ("" "tabu" nil))))
+     ("" "tabu" nil)
+     ("" "listings" nil))))
+ '(org-latex-listings t)
  '(org-outline-path-complete-in-steps nil)
  '(org-refile-targets (quote ((org-agenda-files :maxlevel . 3))))
  '(org-todo-keywords (quote ((sequence "TODO(t)" "WAITING(w)" "DONE(d)"))))
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (auctex cmake-mode dockerfile-mode langtool org-mode ox-reveal yasnippet markdown-mode ledger-mode magit google-c-style helm flycheck company color-theme-sanityinc-solarized use-package)))
+    (bison-mode auctex cmake-mode dockerfile-mode langtool org-mode ox-reveal yasnippet markdown-mode ledger-mode magit google-c-style helm flycheck company color-theme-sanityinc-solarized use-package)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
- '(tramp-default-method "ssh" nil (tramp)))
+ '(tramp-default-method "ssh" nil (tramp))
+ '(tramp-syntax (quote default) nil (tramp)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

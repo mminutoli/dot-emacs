@@ -54,6 +54,10 @@
     :config
     (c-set-offset 'statement-case-open 0)))
 
+(use-package bison-mode
+  :ensure t
+  :mode ".yy|.y|.yc|.l")
+
 (use-package cmake-mode
   :ensure t
   :mode "CMakeLists.txt|.cmake")
@@ -71,8 +75,7 @@
 
 (use-package company
   :ensure t
-  :defer 5
-  :config (global-company-mode 1))
+  :hook (prog-mode . company-mode))
 
 (use-package dockerfile-mode
   :ensure t
@@ -89,10 +92,7 @@
    ("C-x 4 4" . langtool-show-message-at-point)
    ("C-x 4 c" . langtool-correct-buffer)))
 
-(use-package flycheck
-  :ensure t
-  :defer 5
-  :config (global-flycheck-mode 1))
+(use-package flycheck :ensure t :hook (prog-mode . flycheck-mode))
 
 (use-package helm
   :ensure t
@@ -129,6 +129,8 @@
   (auto-fill-mode))
 
 (use-package yasnippet
-  :ensure t)
+  :ensure t
+  :config (yas-reload-all)
+  :hook   (prog-mode . yas-minor-mode))
 
 ;;; init.el ends here
