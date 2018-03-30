@@ -123,7 +123,8 @@
 (use-package org
   :ensure t
   :bind
-  (("C-c c" . org-capture))
+  (("C-c c" . org-capture)
+   ("C-c a" . org-agenda))
   :config
   (use-package ox-reveal :ensure t)
   (auto-fill-mode))
