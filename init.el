@@ -56,7 +56,7 @@
 
 (use-package bison-mode
   :ensure t
-  :mode ".yy|.y|.yc|.l")
+  :mode (".y|.yy|.yc|.l"))
 
 (use-package cmake-mode
   :ensure t
@@ -126,7 +126,7 @@
   (("C-c c" . org-capture)
    ("C-c a" . org-agenda))
   :config
-  (use-package ox-reveal :ensure t)
+  ;; (use-package ox-reveal :ensure t)
   (auto-fill-mode))
 
 (use-package yasnippet
