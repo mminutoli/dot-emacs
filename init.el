@@ -131,7 +131,9 @@
 
 (use-package yasnippet
   :ensure t
-  :config (yas-reload-all)
+  :config
+  (use-package yasnippet-snippets :ensure t)
+  (yas-reload-all)
   :hook   (prog-mode . yas-minor-mode))
 
 ;;; init.el ends here
