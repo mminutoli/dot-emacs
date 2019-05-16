@@ -151,4 +151,15 @@
   (yas-reload-all)
   :hook   (prog-mode . yas-minor-mode))
 
+(use-package elpy
+  :ensure t
+  :defer t
+  :init
+  (advice-add 'python-mode :before 'elpy-enable))
+
+(use-package pipenv
+  :ensure t
+  :defer t
+  :hook (python-mode . pipenv-mode))
+
 ;;; init.el ends here
