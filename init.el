@@ -26,20 +26,27 @@
 (load (expand-file-name "settings" user-emacs-directory))
 
 ;; Select theme
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-	      (lambda (frame)
-		(select-frame frame)
-		(load-theme 'tango-dark t)))
-  (load-theme 'tango-dark t))
+;; (if (daemonp)
+;;     (add-hook 'after-make-frame-functions
+;; 	      (lambda (frame)
+;; 		(select-frame frame)
+;; 		(load-theme 'tango-dark t)))
+;;   (load-theme 'tango-dark t))
 
 ;; Re-enable disabled commands
 (put 'narrow-to-region 'disabled nil)
 
+;; Fix path on Mac
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
+
 (use-package tex
   :ensure auctex
-  :config
-  (auto-fill-mode))
+  :hook ((tex-mode . auto-fill-mode)
+         (tex-mode . outline-minor-mode)))
 
 (use-package cc-mode
   :defer t
@@ -92,7 +99,10 @@
    ("C-x 4 4" . langtool-show-message-at-point)
    ("C-x 4 c" . langtool-correct-buffer)))
 
-(use-package flycheck :ensure t :hook (prog-mode . flycheck-mode))
+(use-package flycheck
+  :ensure t
+  :hook ((prog-mode . flycheck-mode)
+         (tex-mode . flycheck-mode)))
 
 (use-package helm
   :ensure t
@@ -128,6 +138,11 @@
   :config
   ;; (use-package ox-reveal :ensure t)
   (auto-fill-mode))
+
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-default-theme))
 
 (use-package yasnippet
   :ensure t
