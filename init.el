@@ -155,7 +155,9 @@
   :ensure t
   :defer t
   :init
-  (advice-add 'python-mode :before 'elpy-enable))
+  (advice-add 'python-mode :before 'elpy-enable)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  :config (flycheck-mode))
 
 (use-package pipenv
   :ensure t
