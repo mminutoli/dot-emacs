@@ -61,11 +61,16 @@
  '(company-clang-executable nil)
  '(custom-enabled-themes (quote (leuven)))
  '(custom-file "~/.emacs.d/settings.el")
+ '(elpy-modules
+   (quote
+    (elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-django elpy-module-sane-defaults)))
  '(exec-path
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/Cellar/emacs/HEAD-71766a4/libexec/emacs/26.0.50/x86_64-apple-darwin16.7.0" "/usr/local/bin" "/Users/minu455/Library/Python/3.7/bin")))
  '(fill-column 80)
- '(flycheck-clang-language-standard "c++11")
+ '(flycheck-clang-args (quote ("-I/usr/local/opt/llvm/include")))
+ '(flycheck-clang-include-path (quote ("/usr/local/opt/llvm/include")))
+ '(flycheck-clang-language-standard "c++14")
  '(flycheck-clang-pedantic t)
  '(flycheck-clang-pedantic-errors t)
  '(flycheck-global-modes nil)
@@ -122,7 +127,7 @@
  '(package-selected-packages
    (quote
     (pipenv elpy powerline pdf-tools pdf-view exec-path-from-shell yasnippet-snippets bison-mode auctex cmake-mode dockerfile-mode langtool org-mode ox-reveal yasnippet markdown-mode ledger-mode magit google-c-style helm flycheck company color-theme-sanityinc-solarized use-package)))
- '(preview-TeX-style-dir "/Users/minu455/.emacs.d/elpa/auctex-12.1.2/latex")
+ '(preview-TeX-style-dir "/Users/minu455/.emacs.d/elpa/auctex-12.1.2/latex" t)
  '(scroll-bar-mode nil)
  '(shell-file-name "/bin/zsh")
  '(tool-bar-mode nil)
