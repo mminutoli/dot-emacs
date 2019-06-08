@@ -5,6 +5,15 @@
 
 ;;; Code:
 (require 'package)
+(require 'subr-x)
+
+(defun set-exec-path-from-shell-PATH ()
+  "Emacs does not set `exec-path' to include everything it is in the PATH from the shell."
+
+  (interactive)
+  (let ((path-from-shell (string-trim-right (shell-command-to-string "$SHELL --login -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
 
 ;; Avoid multiple initialization of installed packages.
 (setq package-enable-at-startup nil)
@@ -24,6 +33,8 @@
 
 ;; Load customization settings.
 (load (expand-file-name "settings" user-emacs-directory))
+
+(set-exec-path-from-shell-PATH)
 
 (when (eq system-type 'darwin)
   ;; default Latin font (e.g. Consolas)
@@ -116,13 +127,13 @@
 
 (use-package helm
   :ensure t
-  :bind (("C-c h" . helm-command-prefix)
-         ("M-x" . helm-M-x)
-         ("C-x C-f" . helm-find-files)
-         ("C-x b" . helm-mini))
   :config
   (use-package helm-mode
     :diminish helm-mode
+    :bind (("C-c h" . helm-command-prefix)
+	   ("M-x" . helm-M-x)
+	   ("C-x C-f" . helm-find-files)
+	   ("C-x b" . helm-mini))
     :init (helm-mode 1))
   (global-unset-key (kbd "C-x c")))
 
