@@ -161,6 +161,10 @@
   (yas-reload-all)
   :hook   (prog-mode . yas-minor-mode))
 
+(use-package python
+  :mode ("\\.py\\'|wscript" . python-mode)
+  :interpreter ("python" . python-mode))
+
 (use-package elpy
   :ensure t
   :defer t

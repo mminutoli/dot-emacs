@@ -58,6 +58,9 @@
  '(TeX-shell "/bin/sh")
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(company-clang-arguments
+   (quote
+    ("-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk")))
  '(company-clang-executable nil)
  '(custom-enabled-themes (quote (leuven)))
  '(custom-file "~/.emacs.d/settings.el")
@@ -68,8 +71,9 @@
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/Cellar/emacs/HEAD-71766a4/libexec/emacs/26.0.50/x86_64-apple-darwin16.7.0" "/usr/local/bin" "/Users/minu455/Library/Python/3.7/bin")))
  '(fill-column 80)
- '(flycheck-clang-args (quote ("-I/usr/local/opt/llvm/include")))
- '(flycheck-clang-include-path (quote ("/usr/local/opt/llvm/include")))
+ '(flycheck-clang-args
+   (quote
+    ("-isysroot" "/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk")))
  '(flycheck-clang-language-standard "c++14")
  '(flycheck-clang-pedantic t)
  '(flycheck-clang-pedantic-errors t)
